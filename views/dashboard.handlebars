@@ -1,0 +1,20 @@
+<div>
+    {{#if logged_in}}
+    <div class='loggedin-dashboard'>
+        {{#each posts as |post|}}
+        <a href='/post/{{post.id}}'>
+            <h2 class='dashboard-post'>{{post.title}}</h2>
+            <p>Created by {{post.user_id}} on {{format_date post.date_created}}</p>
+        </a>
+        {{/each}}
+        <section>
+            <a href="/newPost">
+                <button type="button" class="btn createPost-btn"> + New Post </button>
+            </a>
+        </section>
+    {{else}}
+    <h3>Don't have an account yet? Create an account today and start sharing! <a href="/signup">Create an account</a></h3>
+    <h3>Already have an account? Login to see your posts! <a href="/login">Login</a></h3>
+    </div>
+    {{/if}}
+</div>

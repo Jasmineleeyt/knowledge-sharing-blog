@@ -1,0 +1,37 @@
+<div class="post">
+    <section>
+        {{!-- single post's title --}}
+        <h2>{{}}</h2>
+        {{!-- single post's username and date created --}}
+        <h4>Shared by {{}} on {{format_date }}</h4>
+        {{!-- content of the single post --}}
+        <p> {{}} </p>
+    </section>
+    <section>
+        <h3>Comments: </h3>
+        {{#each comments as |comment|}}
+        <div class="comment-sec">
+            {{!-- user comment and date--}}
+            <h4>Commented by {{}} on {{format_date }}</h4>
+            {{!-- content of the comment --}}
+            <p>{{}}</p>
+        </div>
+    </section>
+    {{#if logged_in}}
+    {{!-- Able to add comment if logged in --}}
+    <section>
+        <div>
+            <form class="add-comment">
+                <p><label for="comment">Comment:</label></p>
+                <textarea id="comment" name="comment" rows="5" cols="60"></textarea>
+                <br>
+                <button type="submit" class="btn comment-btn">Add Comment</button>
+            </form>                
+        </div>
+    </section>
+    {{/if}}
+</div>
+
+{{#if logged_in}}
+    <script src="/js/comment.js"></script>
+{{/if}}

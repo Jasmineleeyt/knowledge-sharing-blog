@@ -1,11 +1,11 @@
-{{#each}}
-    <section>
+{{#each posts as |post|}}
+    <section class="post-card">
         <div>
-            <h2>Post title</h2>
-            <h3>Post Content</h3>
+            <h2>{{post.title}}</h2>
+            <p>{{post.content}}</p>
+            <p>Created by {{post.user_id}} on {{format_date post.date_created}}</p>
         </div>
     </section>
 {{/each}}
 
-
-<script src="../public/js/homepage.js"></script>
+<script src="/js/homepage.js"></script>

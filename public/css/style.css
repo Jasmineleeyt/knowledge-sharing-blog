@@ -52,7 +52,7 @@ main {
     display: inline-block; 
 }
 
-.signin-btn, .signup-btn {
+.login-btn, .signup-btn {
     margin-top: 1rem;
     border-radius: 3px;
     background-color: white;

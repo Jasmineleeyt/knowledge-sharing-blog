@@ -1,0 +1,44 @@
+* {
+    background-color: #DFEEFB;
+    color: #0D1151;
+}
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 250%;
+    font-style: italic;
+    cursor: default;
+    margin-left: 1rem;
+    margin-top: 2rem;
+
+}
+
+.nav-bar {
+    display: flex;
+    background-color: white;
+}
+
+.nav-link {
+    font-size: 100%;
+    font-weight: bold;
+    background-color: white;
+    border-style: none;
+    text-decoration: none;
+    padding: 0.3rem;
+    width: 80px;
+    text-align: center;
+}
+
+main {
+    margin-left: 1rem;
+}
+
+.footer-sec {
+    background-color: white;
+    text-align: center;
+    padding: 1.5%;
+    margin: 0;
+}

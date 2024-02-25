@@ -5,7 +5,7 @@ const newPost = async (event) => {
   const content = document.querySelector("#newPost-content").value.trim();
 
   if (title && content) {
-    const response = await fetch(`/api/post`, {
+    const response = await fetch(`/api/post/newpost`, {
       method: "POST",
       body: JSON.stringify({ title, content }),
       headers: { "Content-Type": "application/json" },
@@ -19,5 +19,5 @@ const newPost = async (event) => {
 };
 
 document
-  .querySelector('.add-post')
+  .querySelector('.newPost-btn')
   .addEventListener('submit', newPost);

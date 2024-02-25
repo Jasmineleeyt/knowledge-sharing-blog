@@ -1,3 +1,4 @@
+// Edit post
 const editPost = async (event) => {
     event.preventDefault();
   
@@ -5,7 +6,6 @@ const editPost = async (event) => {
     const content = document.querySelector("#editPost-content").value.trim();
   
     if (title && content) {
-    // TO DO: get post id
         const response = await fetch(`/api/post/${id}`, {
         method: "PUT",
         body: JSON.stringify({ title, content }),
@@ -19,10 +19,8 @@ const editPost = async (event) => {
     }
   };
   
-const deletePost = async (event) => {
-    
-};
+
 
   document
     .querySelector('.add-post')
-    .addEventListener('submit', newPost);
+    .addEventListener('submit', editPost);

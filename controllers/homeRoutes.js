@@ -2,7 +2,7 @@ const router = require('express').Router();
 const { Comments, Post, User } = require('../models');
 const withAuth = require('../utils/auth');
 
-// Render homepage
+// Renders existing post on the homepage
 router.get('/', async (req, res) => {
   try {
     const postData = await Post.findAll();
@@ -20,7 +20,29 @@ router.get('/', async (req, res) => {
   }
 });
 
-// Render dashboard page and the existing posts
+// Renders the dashboard page when signed in
+router.get("/dashboard",  withAuth, async (req, res) => {
+  try {
+    const postData = await Post.findAll({
+      where: {
+        user_id: req.session.user_id,
+      },
+    });
+
+    const posts = postData.map((post) => post.get({ plain: true }));
+
+    console.log(...posts);
+    res.render("dashboard", {
+      posts,
+      logged_in: req.session.logged_in,
+    });
+  } catch (err) {
+    console.log(err)
+    res.status(500).json(err);
+  }
+});
+
+// Render the existing posts
 router.get('/post/:id', withAuth, async (req, res) => {
   try {
     const postData = await Post.findByPk(req.params.id, {
@@ -44,8 +66,8 @@ router.get('/post/:id', withAuth, async (req, res) => {
 
     const post = postData.get({ plain: true });
 
-    res.render('dashboard', {
-      ...post,
+    res.render('eachPost', {
+      post,
       logged_in: req.session.logged_in
     });
   } catch (err) {
@@ -53,8 +75,8 @@ router.get('/post/:id', withAuth, async (req, res) => {
   }
 });
 
+// Renders login and redirects the user to the homepage when logged in
 router.get('/login', (req, res) => {
-  // If the user is already logged in, redirect the request to another route
   if (req.session.logged_in) {
     res.redirect('/');
     return;
@@ -63,9 +85,10 @@ router.get('/login', (req, res) => {
   res.render('login');
 });
 
+// Renders signup and redirects the user to the homepage when logged in
 router.get('/signup', (req, res) => {
   if (req.session.logged_in) {
-    reset.redirect('/');
+    res.redirect('/');
     return;
   }
 

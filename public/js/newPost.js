@@ -1,3 +1,4 @@
+// New post
 const newPost = async (event) => {
   event.preventDefault();
 

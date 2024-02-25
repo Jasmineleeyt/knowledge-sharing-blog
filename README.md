@@ -49,7 +49,7 @@ Link to deployed application:
 
 Documentations that helped understand Handlebars and Sequelize:
 
-- [Handlebars] (https://handlebarsjs.com/guide/)
+- [Handlebars](https://handlebarsjs.com/guide/)
 
 - [Sequelize Associations](https://sequelize.org/docs/v6/core-concepts/assocs/)
 

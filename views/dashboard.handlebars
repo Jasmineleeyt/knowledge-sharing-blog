@@ -1,4 +1,5 @@
 <div>
+    {{!-- Need to login to see the dashboard page --}}
     {{#if logged_in}}
     <div class='loggedin-dashboard'>
         {{#each posts}}
@@ -8,13 +9,10 @@
         </a>
         {{/each}}
         <section>
-            <a href="/newPost">
+            <a href="/api/post/newpost">
                 <button type="button" class="btn createPost-btn"> + New Post </button>
             </a>
         </section>
-    {{else}}
-    <h3>Don't have an account yet? Create an account today and start sharing! <a href="/signup">Create an account</a></h3>
-    <h3>Already have an account? Login to see your posts! <a href="/login">Login</a></h3>
-    </div>
+
     {{/if}}
 </div>

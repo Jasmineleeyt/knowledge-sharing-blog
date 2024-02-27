@@ -14,6 +14,8 @@ A CMS-style blog site that allows the user to publish their blog posts and comme
 
 :thumbsup: No installation is required if accessing through the deployed application!
 
+:point_right:[Click here to go to the deployed application section](#deployed-application)
+
 :computer: To run this locally, please make sure you have the following:
 
 :heavy_check_mark: [Node.js](https://nodejs.org/en)
@@ -42,8 +44,8 @@ Clicking on the post title, the user will be able to see the content of the post
 Back to the Dashboard page, when the user click on the "+ New Post", they will be redirected to the create post page.
 ![create-post-page](https://github.com/Jasmineleeyt/knowledge-sharing-blog/assets/140264009/97c7befb-8dcf-44ff-b992-91cb8708c78c)
 
-Link to deployed application: 
-
+### Deployed Application
+Link to the deployed application: [The Blog](https://still-scrubland-52885-0604b3ecf1ba.herokuapp.com/)
 
 ## Credits
 
